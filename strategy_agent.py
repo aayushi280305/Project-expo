@@ -43,8 +43,8 @@ Be decisive. Reference specific numbers from the financial analysis. Write at an
 
 class StrategyAgent:
     def __init__(self):
-        self.client = Anthropic()
-        self.name = "Strategy Consultant"
+    api_key = os.environ.get("ANTHROPIC_API_KEY")
+    self.client = Anthropic(api_key=api_key)
 
     def analyze(self, context: dict, market_insights: str, financial_insights: str) -> dict:
         """Synthesize all insights into final strategic recommendation."""
