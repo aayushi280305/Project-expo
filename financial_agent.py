@@ -46,8 +46,8 @@ Rules:
 
 class FinancialAgent:
     def __init__(self):
-        self.client = Anthropic()
-        self.name = "Financial Analyst"
+    api_key = os.environ.get("ANTHROPIC_API_KEY")
+    self.client = Anthropic(api_key=api_key)
 
     def analyze(self, context: dict, market_insights: str) -> dict:
         """Run financial analysis using market research as input."""
