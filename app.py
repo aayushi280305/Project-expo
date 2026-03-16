@@ -1,9 +1,9 @@
 import streamlit as st
 import time
-from agents.market_research_agent import MarketResearchAgent
-from agents.financial_agent import FinancialAgent
-from agents.strategy_agent import StrategyAgent
-from utils.visualizations import (
+from market_research_agent import MarketResearchAgent
+from financial_agent import FinancialAgent
+from strategy_agent import StrategyAgent
+from visualizations import (
     create_roi_chart,
     create_strategy_radar,
     create_revenue_waterfall,
