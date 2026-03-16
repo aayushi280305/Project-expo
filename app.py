@@ -1,4 +1,13 @@
 import streamlit as st
+import os
+
+# ── Load API key ──────────────────────────────────────────────────────────────
+if "ANTHROPIC_API_KEY" in st.secrets:
+    os.environ["ANTHROPIC_API_KEY"] = st.secrets["ANTHROPIC_API_KEY"]
+
+if not os.environ.get("ANTHROPIC_API_KEY"):
+    st.error("❌ ANTHROPIC_API_KEY not found. Add it in Streamlit Cloud → Settings → Secrets.")
+    st.stop()
 import time
 from market_research_agent import MarketResearchAgent
 from financial_agent import FinancialAgent
